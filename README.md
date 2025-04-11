@@ -12,7 +12,7 @@ It aims to replicate the core functionality and user interface of the physical c
 - Easy-to-use and beginner-friendly
 
 ## 📸 Screenshot
-
+![fx-991EX calculator](image.png)
 
 
 ## 🚀 Getting Started
