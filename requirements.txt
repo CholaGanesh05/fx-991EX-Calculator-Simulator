@@ -1,1 +1,71 @@
- 
+Based on your code and the calculator image you've shared, here's a comprehensive `requirements.txt` file that includes all the necessary dependencies for your Casio fx-991EX ClassWiz Advanced calculator simulator:
+
+```
+# Core requirements
+tkinter>=8.6
+numpy>=1.21.0
+scipy>=1.7.0
+matplotlib>=3.4.0
+pillow>=8.3.0  # For potential image handling
+
+# Development/testing requirements
+pytest>=6.2.0
+black>=21.0
+flake8>=3.9.0
+mypy>=0.900
+
+# Optional (for enhanced features)
+pyperclip>=1.8.0  # For improved clipboard handling
+qrcode>=7.0  # For QR code generation (if you implement it fully)
+```
+
+### Notes about the requirements:
+
+1. **Core Requirements**:
+   - `tkinter` comes with Python by default (no need to install separately)
+   - `numpy` and `scipy` are used for advanced math operations and matrix calculations
+   - `matplotlib` is used for any potential plotting functionality
+   - `pillow` is included in case you add image handling features
+
+2. **Development Requirements**:
+   - These are useful if you plan to continue developing the project
+   - Can be installed with `pip install -r requirements-dev.txt` if you separate them
+
+3. **Optional Requirements**:
+   - `pyperclip` provides more robust clipboard handling than tkinter's built-in
+   - `qrcode` would be needed if you implement actual QR code generation
+
+### Additional recommendations:
+
+1. You might want to create a `setup.py` file for easier installation:
+```python
+from setuptools import setup, find_packages
+
+setup(
+    name="fx991ex-calculator",
+    version="1.0",
+    packages=find_packages(),
+    install_requires=[
+        "numpy>=1.21.0",
+        "scipy>=1.7.0",
+        "matplotlib>=3.4.0",
+        "pillow>=8.3.0",
+    ],
+    extras_require={
+        "dev": [
+            "pytest>=6.2.0",
+            "black>=21.0",
+            "flake8>=3.9.0",
+            "mypy>=0.900",
+        ],
+        "full": [
+            "pyperclip>=1.8.0",
+            "qrcode>=7.0",
+        ],
+    },
+)
+```
+
+2. Consider adding a `.gitignore` file for Python projects to exclude unnecessary files from your GitHub repository.
+
+3. You might want to add a `README.md` file explaining how to install and use your calculator simulator. 
